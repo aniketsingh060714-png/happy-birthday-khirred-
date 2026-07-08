@@ -218,6 +218,112 @@ h.style.fontSize=(15+Math.random()*25)+"px";
 h.style.animationDuration=(5+Math.random()*5)+"s";
 document.body.appendChild(h);
 }
+// 🧸 TEDDY (auto create + style)
+let teddy = document.createElement("div");
+teddy.innerHTML = "🧸";
+document.body.appendChild(teddy);
+
+// style via JS (kyuki style section nahi hai)
+teddy.style.position = "fixed";
+teddy.style.bottom = "20px";
+teddy.style.left = "-300px";
+teddy.style.fontSize = "100px";
+teddy.style.transition = "1s";
+
+// 🧸 animation
+function showTeddy(){
+  teddy.style.left = "20px";
+
+  setTimeout(()=>{
+    teddy.innerHTML = "🧸 Hi ❤️";
+  },800);
+
+  setTimeout(()=>{
+    teddy.style.left = "-300px";
+    teddy.innerHTML = "🧸";
+  },3000);
+}
+
+setInterval(showTeddy,6000);
+
+
+// 🎆 FIREWORKS (no CSS needed)
+function fire(){
+  let x = Math.random()*window.innerWidth;
+  let y = Math.random()*window.innerHeight/2;
+
+  for(let i=0;i<20;i++){
+    let f = document.createElement("div");
+
+    f.style.position="fixed";
+    f.style.width="6px";
+    f.style.height="6px";
+    f.style.background="white";
+    f.style.borderRadius="50%";
+
+    let angle=Math.random()*2*Math.PI;
+    let r=80;
+
+    let dx=Math.cos(angle)*r;
+    let dy=Math.sin(angle)*r;
+
+    f.style.left=x+"px";
+    f.style.top=y+"px";
+
+    document.body.appendChild(f);
+
+    // animation JS se
+    setTimeout(()=>{
+      f.style.transform=`translate(${dx}px,${dy}px)`;
+      f.style.opacity="0";
+      f.style.transition="1s";
+    },10);
+
+    setTimeout(()=>f.remove(),1000);
+  }
+}
+
+
+// 💌 LETTER (auto create)
+let letter = document.createElement("div");
+letter.style.position="fixed";
+letter.style.top="50%";
+letter.style.left="50%";
+letter.style.transform="translate(-50%,-50%)";
+letter.style.background="rgba(0,0,0,0.85)";
+letter.style.color="white";
+letter.style.padding="20px";
+letter.style.borderRadius="10px";
+letter.style.maxWidth="300px";
+letter.style.textAlign="center";
+letter.style.display="none";
+
+letter.innerHTML = `
+<h3>For You ❤️</h3>
+<p>
+Out of billions of people... I’m lucky to have you ❤️<br><br>
+
+I see a future with you…  
+We’ll spend our life together, celebrate your birthdays,  
+enjoy trips, laugh, and one day even with our little family 💖<br><br>
+
+Right now you're on a trip with your sister,  
+so just enjoy, smile, and stay happy 😊<br><br>
+
+I’ll always be with you ❤️<br><br>
+
+Happy Birthday 🎂
+</p>
+`;
+
+document.body.appendChild(letter);
+
+
+// ⏳ FINAL TIMING
+setTimeout(()=>{
+  letter.style.display="block";
+  setInterval(fire,1200);
+},10000);
 </script>
 
 </body>
