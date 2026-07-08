@@ -181,11 +181,30 @@ Open My Heart ❤️
 
 </div>
 <h2>Our Song 🎶</h2>
-
-<audio controls autoplay loop>
-  <source src="https://raw.githubusercontent.com/aniketsingh060714-png/happy-birthday-khirred-/main/Lana%20Del%20Rey%20-%20Young%20and%20Beautiful.mp3" type="audio/mpeg">
-</audio>
+<audio id="bgMusic"></audio>
+ 
 <script>
+ const songs = [
+  "https://raw.githubusercontent.com/aniketsingh060714-png/happy-birthday-khirred-/main/Lana Del Rey - Young and Beautiful.mp3",
+  "https://raw.githubusercontent.com/aniketsingh060714-png/happy-birthday-khirred-/main/Lana Del Rey - Brooklyn Baby (Official Audio).mp3"
+];
+
+let index = 0;
+const player = document.getElementById("bgMusic");
+
+function playSong(i){
+  player.src = songs[i];
+  player.play();
+}
+
+player.addEventListener("ended", function(){
+  index = (index + 1) % songs.length;
+  playSong(index);
+});
+
+document.body.addEventListener("click", function () {
+  playSong(index);
+}, { once: true });
 function showLove(){
 alert("Out of billions of people... I'm the luckiest because I found you. 💜 Happy Birthday My Sweetuuu ❤️");
 }
