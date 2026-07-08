@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Sweetuuu 💜</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+background:linear-gradient(135deg,#8e44ad,#c084fc,#f3e8ff);
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+.card{
+width:90%;
+max-width:600px;
+padding:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+border-radius:25px;
+box-shadow:0 0 30px rgba(255,255,255,.3);
+animation:fade 2s;
+}
+
+h1{
+font-size:34px;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+font-size:18px;
+}
+
+button{
+margin-top:20px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#8e44ad;
+font-weight:bold;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:up 8s linear infinite;
+}
+
+@keyframes up{
+0%{transform:translateY(110vh);}
+100%{transform:translateY(-120vh);}
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎂 Happy Birthday My Sweetuuu 💜</h1>
+
+<p>
+
+Dear Khirred,
+
+Happy Birthday to the most beautiful person in my life.
+
+I still can't believe how lucky I am to have you.
+
+In just a few more days, we'll complete our first year together, and every single moment with you has been precious.
+
+You're not just my girlfriend...
+
+You're my Sweetuuu, my Jaan, my best friend, my comfort, and my future wife in my heart.
+
+No matter how far we are, I'll always choose you.
+
+Thank you for loving me.
+
+I hope today gives you every reason to smile.
+
+I love you more than words can ever explain.
+
+Forever Yours,
+
+❤️ Aniket
+
+</p>
+
+<button onclick="showLove()">
+
+Open My Heart ❤️
+
+</button>
+
+</div>
+
+<script>
+
+function showLove(){
+
+alert("Out of billions of people... I'm the luckiest because I found you. 💜 Happy Birthday My Sweetuuu ❤️");
+
+}
+
+for(let i=0;i<50;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💜";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+h.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
